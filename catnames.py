@@ -4,6 +4,8 @@
 
 import random
 import time
+from collections import defaultdict
+import json
 
 
 catlist = ["muffins", "cupcake", "flour", "sugar", "pepper",
@@ -23,8 +25,15 @@ writecatnames = open('catnames.json', 'w')
 if entry == 'run':
     randomNames = random.choices(catlist, k = 10)
     target = {39: None, 91: None, 93: None}
-    randomNamesCleaned = (str(randomNames).translate(target))
+    #randomNamesCleaned = (str(randomNames).translate(target))
     #randomNamesCleaned = randomNamesCleaned.replace(',','')
-    writecatnames.write(format(randomNamesCleaned))
-writecatnames.close()
 
+    catnamedict = defaultdict(list)
+    for names in randomNames:
+        catnamedict["names"].append(names)
+    #print(catnamedict)
+    #writecatnames.write(format(catnamedict))
+    #writecatnames.write(json.dumps(catnamedict))
+    print(json.dumps(catnamedict))
+    writecatnames.write(json.dumps(catnamedict))
+writecatnames.close()

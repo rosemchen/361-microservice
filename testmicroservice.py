@@ -1,40 +1,22 @@
-# Program that generates psuedo-random numbers (PRNG service)
+# Microservice for Dawn's Cat Avatar Project
+# Reads "run" from catnames.json
+# Prints out object with 10 random cat names
 
 import random
 import time
 
-random.seed()   #initialize rng
-while True:
-    #print("#21")
-    time.sleep(3)       #sleep for one second
-    #print("#22")
-    prng = open('prng-service.txt', 'r')    #open prng-service.txt file
-    #print("#23")
-    entry = prng.readline()     #read file entry
-    prng.close()
-    if entry == 'run':
-        break
+from Tools.scripts.make_ctype import values
 
-#erase image-service file to clear it
-#image = open('image-service.txt', 'w')
-#imageNum = image.readline()
+catlist = { 'names' : ["muffins", "cupcake", "flour", "sugar", "pepper",
+             "chocolate", "oatmeal", "cereal", "puffs", "cookie",
+           "brownie", "cannoli", "hershey", "butterscotch", "licorice",
+                   "maple", "honey", "mochi", "mousse", "nutmeg", "cinnamon", "smores", "shortcake", "butters", "waffle", "pancake", "toffee", "pumpkin", "marshmallow"]}
 
+print(type(catlist))
 
-prng1 = open('prng-service.txt', 'w')
-#print("#24")
-#print(entry)
-if entry == 'run':      #if entry file "run"
-    #print("#25")
-    randomNum = str(random.randint(1,3))    #generate random number 1-3
-    #prng.seek(0)
-    #print("#26")
-    #print(randomNum)
-    prng1.write(randomNum)
-prng1.close()
+#keys = catlist.values()
+#random.shuffle(values)
+#for names in keys:
+#    print(names, catlist[values])
 
-
-
-
-words = ["as", "I", "his", "that", "he", "was", "for", "on", "are", "with"]
-
-cats = [""]
+new_catlist = list()
