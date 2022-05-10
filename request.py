@@ -14,6 +14,6 @@ while True:
         output = open('catnames.json', 'r')
         write = output.readline()
         output.close()
-        print(f"{write}")
+        #print(f"{write}")
     elif userinput == 2:
         break

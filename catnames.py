@@ -28,6 +28,6 @@ while True:
         #print(catnamedict)
         #writecatnames.write(format(catnamedict))
         #writecatnames.write(json.dumps(catnamedict))
-        print(json.dumps(catnamedict))
+        #print(json.dumps(catnamedict))
         writecatnames.write(json.dumps(catnamedict))
 writecatnames.close()
