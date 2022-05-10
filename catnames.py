@@ -14,7 +14,7 @@ catlist = ["muffins", "cupcake", "flour", "sugar", "pepper",
 
 random.seed()
 while True:
-    time.sleep(1)
+    time.sleep(3)
     readcatnames = open('catnames.json', 'r')
     entry = readcatnames.readline()
     readcatnames.close()
@@ -30,4 +30,5 @@ while True:
         #writecatnames.write(json.dumps(catnamedict))
         #print(json.dumps(catnamedict))
         writecatnames.write(json.dumps(catnamedict))
-writecatnames.close()
+        writecatnames.close()
+#writecatnames.close()

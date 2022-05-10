@@ -9,8 +9,8 @@ while True:
         print('write "run" in catnames.json')
         catnameswrite.close()
         print('close catnames.json and wait')
-        time.sleep(5)
 
+        time.sleep(5)
         output = open('catnames.json', 'r')
         write = output.readline()
         output.close()
