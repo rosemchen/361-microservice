@@ -3,7 +3,6 @@
 # Prints out object with 10 random cat names
 
 import random
-import time
 from collections import defaultdict
 import json
 
@@ -14,7 +13,6 @@ catlist = ["muffins", "cupcake", "flour", "sugar", "pepper",
 
 random.seed()
 while True:
-    time.sleep(3)
     readcatnames = open('catnames.json', 'r')
     entry = readcatnames.readline()
     readcatnames.close()
@@ -25,10 +23,5 @@ while True:
         catnamedict = defaultdict(list)
         for names in randomNames:
             catnamedict["names"].append(names)
-        #print(catnamedict)
-        #writecatnames.write(format(catnamedict))
-        #writecatnames.write(json.dumps(catnamedict))
-        #print(json.dumps(catnamedict))
         writecatnames.write(json.dumps(catnamedict))
         writecatnames.close()
-#writecatnames.close()
